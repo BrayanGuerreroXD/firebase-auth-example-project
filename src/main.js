@@ -16,6 +16,7 @@ onAuthStateChanged(auth, async (user) => {
         const querySnapshot = await getDocs(collection(db, 'posts'))
         setupPosts(querySnapshot.docs)
     } else {
-        loginCheck()
+     setupPosts([])   
     }
+    loginCheck(user)
 })
